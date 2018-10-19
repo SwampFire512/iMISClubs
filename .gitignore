@@ -1,0 +1,10 @@
+.DS_Store
+.vs/iMISClubs/xs/
+iMISClubs/iMISClubs/bin/
+iMISClubs/iMISClubs/obj/
+iMISClubs/iMISClubs.Android/bin/
+iMISClubs/iMISClubs.Android/obj/
+iMISClubs/iMISClubs.MobileAppService/bin/
+iMISClubs/iMISClubs.MobileAppService/obj/
+iMISClubs/iMISClubs.iOS/bin/
+iMISClubs/iMISClubs.iOS/obj/

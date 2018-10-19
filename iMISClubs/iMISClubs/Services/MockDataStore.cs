@@ -6,21 +6,21 @@ using iMISClubs.Models;
 
 namespace iMISClubs.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<RosterMember>
     {
-        List<Item> items;
+        List<RosterMember> items;
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            items = new List<RosterMember>();
+            var mockItems = new List<RosterMember>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
+                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Dylan Cervantes", Description="Dylan" },
+                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Adrienne Cole", Description="Adrienne" },
+                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Kylie Ford", Description="Kylie" },
+                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Fausto Guzman", Description="Fausto" },
+                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Trey McCarroll", Description="Trey" },
+                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "D'Shawna Tovares", Description="D'Shawna" },
             };
 
             foreach (var item in mockItems)
@@ -29,16 +29,16 @@ namespace iMISClubs.Services
             }
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(RosterMember item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(RosterMember item)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = items.Where((RosterMember arg) => arg.Id == item.Id).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -47,18 +47,18 @@ namespace iMISClubs.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = items.Where((RosterMember arg) => arg.Id == id).FirstOrDefault();
             items.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<RosterMember> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<RosterMember>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

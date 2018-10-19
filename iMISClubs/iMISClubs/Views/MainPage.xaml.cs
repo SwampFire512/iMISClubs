@@ -27,10 +27,10 @@ namespace iMISClubs.Views
                 switch (id)
                 {
                     case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        MenuPages.Add(id, new NavigationPage(new RosterMembersPage()));
                         break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                    case (int)MenuItemType.Scan:
+                        MenuPages.Add(id, new NavigationPage(new ScannerPage()));
                         break;
                 }
             }

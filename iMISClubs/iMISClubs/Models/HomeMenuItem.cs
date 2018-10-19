@@ -7,7 +7,7 @@ namespace iMISClubs.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        Scan
     }
     public class HomeMenuItem
     {

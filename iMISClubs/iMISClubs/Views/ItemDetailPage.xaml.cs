@@ -11,9 +11,9 @@ namespace iMISClubs.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        RosterMemberDetailViewModel viewModel;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public ItemDetailPage(RosterMemberDetailViewModel viewModel)
         {
             InitializeComponent();
 
@@ -24,13 +24,13 @@ namespace iMISClubs.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new RosterMember
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                FullName = "Member name",
+                Description = "Member nick-name"
             };
 
-            viewModel = new ItemDetailViewModel(item);
+            viewModel = new RosterMemberDetailViewModel(item);
             BindingContext = viewModel;
         }
     }

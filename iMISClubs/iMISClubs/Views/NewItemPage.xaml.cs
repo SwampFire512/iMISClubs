@@ -11,16 +11,16 @@ namespace iMISClubs.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public RosterMember RosterMember { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            RosterMember = new RosterMember
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                FullName = "Member name",
+                Description = "Member nick-name"
             };
 
             BindingContext = this;
@@ -28,7 +28,7 @@ namespace iMISClubs.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddItem", RosterMember);
             await Navigation.PopModalAsync();
         }
 

@@ -10,27 +10,30 @@ using iMISClubs.Views;
 
 namespace iMISClubs.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class RosterMembersViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<RosterMember> Members { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
+        public RosterMembersViewModel()
         {
-            Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Title = "Current Roster";
+            System.Console.WriteLine("contruct members viewmodel");
+            Members = new ObservableCollection<RosterMember>();
+            Members.Add(new RosterMember { FullName = "hi", Description = "hi", Id = Guid.Empty.ToString() });
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewItemPage, RosterMember>(this, "AddItem", async (obj, item) =>
             {
-                var newItem = item as Item;
-                Items.Add(newItem);
+                var newItem = item as RosterMember;
+                Members.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });
         }
 
         async Task ExecuteLoadItemsCommand()
         {
+            System.Console.WriteLine("load members: " + IsBusy);
             if (IsBusy)
                 return;
 
@@ -38,11 +41,11 @@ namespace iMISClubs.ViewModels
 
             try
             {
-                Items.Clear();
+                //Members.Clear();
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    Members.Add(item);
                 }
             }
             catch (Exception ex)

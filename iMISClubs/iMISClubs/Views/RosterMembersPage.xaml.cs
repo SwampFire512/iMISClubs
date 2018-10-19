@@ -14,24 +14,23 @@ using iMISClubs.ViewModels;
 namespace iMISClubs.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ItemsPage : ContentPage
+    public partial class RosterMembersPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        RosterMembersViewModel viewModel;
 
-        public ItemsPage()
+        public RosterMembersPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new RosterMembersViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Item;
+            var item = args.SelectedItem as RosterMember;
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            await Navigation.PushAsync(new ItemDetailPage(new RosterMemberDetailViewModel(item)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;
@@ -45,8 +44,8 @@ namespace iMISClubs.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
+            System.Console.WriteLine("RosterMembersPage OnAppearing.  viewmodel load members.");
+            if (viewModel.Members.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
     }
