@@ -15,12 +15,12 @@ namespace iMISClubs.Services
             items = new List<RosterMember>();
             var mockItems = new List<RosterMember>
             {
-                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Dylan Cervantes", Description="Dylan" },
-                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Adrienne Cole", Description="Adrienne" },
-                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Kylie Ford", Description="Kylie" },
-                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Fausto Guzman", Description="Fausto" },
-                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "Trey McCarroll", Description="Trey" },
-                new RosterMember { Id = Guid.NewGuid().ToString(), FullName = "D'Shawna Tovares", Description="D'Shawna" },
+                new RosterMember { Id = "25255", FullName = "Dylan Cervantes", Description="Dylan" },
+                new RosterMember { Id = "70909", FullName = "Adrienne Cole", Description="Adrienne" },
+                new RosterMember { Id = "48642", FullName = "Kylie Ford", Description="Kylie" },
+                new RosterMember { Id = "46868", FullName = "Fausto Guzman", Description="Fausto" },
+                new RosterMember { Id = "62738", FullName = "Trey McCarroll", Description="Trey" },
+                new RosterMember { Id = "82090", FullName = "D'Shawna Tovares", Description="D'Shawna" },
             };
 
             foreach (var item in mockItems)
