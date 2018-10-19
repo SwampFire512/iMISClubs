@@ -4,9 +4,9 @@
              x:Class="iMISClubs.Views.ItemDetailPage"
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" FontSize="Small"/>
+        <Label Text="Full name:" FontSize="Medium" />
+        <Label Text="{Binding Member.FullName}" FontSize="Small"/>
+        <Label Text="Nick name:" FontSize="Medium" />
+        <Label Text="{Binding Member.Description}" FontSize="Small"/>
     </StackLayout>
 </ContentPage>
