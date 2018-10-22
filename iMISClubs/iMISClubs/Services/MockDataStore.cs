@@ -40,8 +40,8 @@ namespace iMISClubs.Services
                 new RosterMember { Id = "62738", FullName = "Trey McCarroll", Description="Trey", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.New , MemberAlerts = new Collection<MemberAlert>
                 {
                     new MemberAlert{Id = Guid.NewGuid().ToString(), Description = "Trey does not get along with Dylan", Type = MemberAlertType.Warning}
-                }},
-                new RosterMember { Id = "82090", FullName = "D'Shawna Tovares", Description="D'Shawna", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.New },
+                }}//,
+//                new RosterMember { Id = "82090", FullName = "D'Shawna Tovares", Description="D'Shawna", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.New },
             };
 
             foreach (var item in mockItems)
