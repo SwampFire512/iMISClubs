@@ -42,4 +42,15 @@
     <EmbeddedResource Include="Svg\greenHouse.svg" />
     <EmbeddedResource Include="Svg\greyHouse.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI">
+      <HintPath>C:\Users\cespino\.nuget\packages\xamarin.android.support.core.ui\27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>C:\Users\cespino\.nuget\packages\xamarin.android.support.v7.cardview\27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

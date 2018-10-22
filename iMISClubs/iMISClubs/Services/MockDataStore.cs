@@ -41,7 +41,8 @@ namespace iMISClubs.Services
                 {
                     new MemberAlert{Id = Guid.NewGuid().ToString(), Description = "Trey does not get along with Dylan", Type = MemberAlertType.Warning}
                 }},
-                new RosterMember { Id = "82090", FullName = "D'Shawna Tovares", Description="D'Shawna", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.New, ProfileImageResource = "iMISClubs.EmbeddedImages.person.png"},
+                new RosterMember { Id = "82090", FullName = "D'Shawna Tovares", Description="D'Shawna", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.New, ProfileImageResource = "iMISClubs.EmbeddedImages.person.png"}
+				
             };
 
             foreach (var item in mockItems)
