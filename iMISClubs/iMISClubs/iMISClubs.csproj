@@ -10,12 +10,36 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />  
+    <PackageReference Include="SkiaSharp" Version="1.60.3" />
+    <PackageReference Include="SkiaSharp.Extended" Version="1.60.0" />
+    <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
+    <PackageReference Include="SkiaSharp.Views" Version="1.60.3" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.60.3" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />  
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />  
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="ViewModels\RosterItemViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="EmbeddedImages\jcervantes.png" />
+    <None Remove="EmbeddedImages\person.png" />
+    <None Remove="Svg\blueArrow.svg" />
+    <None Remove="Svg\blueHouse.svg" />
+    <None Remove="Svg\greenArrow.svg" />
+    <None Remove="Svg\greenhouse.svg" />
+    <None Remove="Svg\greyHouse.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedImages\jcervantes.png" />
+    <EmbeddedResource Include="EmbeddedImages\person.png" />
+    <EmbeddedResource Include="Svg\blueArrow.svg" />
+    <EmbeddedResource Include="Svg\blueHouse.svg" />
+    <EmbeddedResource Include="Svg\greenArrow.svg" />
+    <EmbeddedResource Include="Svg\greenHouse.svg" />
+    <EmbeddedResource Include="Svg\greyHouse.svg" />
   </ItemGroup>
 </Project>

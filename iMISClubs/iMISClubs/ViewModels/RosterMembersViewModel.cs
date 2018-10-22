@@ -12,19 +12,19 @@ namespace iMISClubs.ViewModels
 {
     public class RosterMembersViewModel : BaseViewModel
     {
-        public ObservableCollection<RosterMember> Members { get; set; }
+        public ObservableCollection<RosterMemberViewModel> Members { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public RosterMembersViewModel()
         {
             Title = "Current Roster";
-            Members = new ObservableCollection<RosterMember>();
+            Members = new ObservableCollection<RosterMemberViewModel>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             MessagingCenter.Subscribe<NewItemPage, RosterMember>(this, "AddItem", async (obj, item) =>
             {
                 var newItem = item as RosterMember;
-                Members.Add(newItem);
+                Members.Add(new RosterMemberViewModel(newItem));
                 await DataStore.AddItemAsync(newItem);
             });
         }
@@ -42,7 +42,7 @@ namespace iMISClubs.ViewModels
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    Members.Add(item);
+                    Members.Add(new RosterMemberViewModel(item));
                 }
             }
             catch (Exception ex)

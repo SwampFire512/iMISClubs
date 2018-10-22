@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace iMISClubs.Droid
 {
@@ -20,7 +21,9 @@ namespace iMISClubs.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            // barcode reader support
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
+            ImageCircleRenderer.Init();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
