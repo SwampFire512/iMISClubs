@@ -13,8 +13,10 @@ namespace iMISClubs.Services
 
         public MockDataStore()
         {
-            items = new List<RosterMember>();
-            var mockItems = new List<RosterMember>
+            if (items == null)
+            {
+                items = new List<RosterMember>();
+                var mockItems = new List<RosterMember>
             {
                 new RosterMember { Id = "25255", FullName = "Dylan Cervantes", Description="Dylan", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.New, ProfileImageResource = "iMISClubs.EmbeddedImages.jcervantes.png", MemberAlerts = new Collection<MemberAlert>
                 {
@@ -40,15 +42,17 @@ namespace iMISClubs.Services
                 new RosterMember { Id = "62738", FullName = "Trey McCarroll", Description="Trey", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.CheckedOut, ProfileImageResource = "iMISClubs.EmbeddedImages.person.png", MemberAlerts = new Collection<MemberAlert>
                 {
                     new MemberAlert{Id = Guid.NewGuid().ToString(), Description = "Trey does not get along with Dylan", Type = MemberAlertType.Warning}
-                }},
-                new RosterMember { Id = "82090", FullName = "D'Shawna Tovares", Description="D'Shawna", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.New, ProfileImageResource = "iMISClubs.EmbeddedImages.person.png"}
-				
+                }}//,
+//                new RosterMember { Id = "82090", FullName = "D'Shawna Tovares", Description="D'Shawna", InstituteType = "School", InstituteTypeName = "Copper Heights Elementary", Status = CheckInStatus.New, ProfileImageResource = "iMISClubs.EmbeddedImages.person.png"}
+
             };
 
-            foreach (var item in mockItems)
-            {
-                items.Add(item);
+                foreach (var item in mockItems)
+                {
+                    items.Add(item);
+                }
             }
+            
         }
 
         public async Task<bool> AddItemAsync(RosterMember item)
